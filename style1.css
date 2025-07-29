@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-padding-top: 12rem; /* Further increased padding for more comfortable viewing space */
+}
+
+/* Disable text selection and cursor */
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default !important;
+}
+
+/* Allow text selection and specific cursors for interactive elements */
+input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    cursor: text !important;
+}
+
+a, button, [role="button"] {
+    cursor: pointer !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #030014;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(3, 0, 20, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(147, 51, 234, 0.3);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        inset 0 0 20px rgba(168, 85, 247, 0.2),
+        0 0 10px rgba(147, 51, 234, 0.2);
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(147, 51, 234, 0.5);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    box-shadow: 
+        inset 0 0 30px rgba(168, 85, 247, 0.3),
+        0 0 15px rgba(147, 51, 234, 0.3);
+}
+
+/* Animations */
+@keyframes gradient-y {
+    0%, 100% {
+        background-size: 400% 400%;
+        background-position: center top;
+    }
+    50% {
+        background-size: 200% 200%;
+        background-position: center center;
+    }
+}
+
+.animate-gradient-y {
+    animation: gradient-y 15s ease infinite;
+}
+
+/* Custom AOS animations */
+[data-aos="custom-fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition-property: transform, opacity;
+}
+
+[data-aos="custom-fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .mobile-menu {
+        position: fixed;
+        top: 4rem;
+        right: 0;
+        left: 0;
+        background: rgba(3, 0, 20, 0.95);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+        padding: 1rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Badge and Tech Pills */
+.badge {
+    background: rgba(147, 51, 234, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(147, 51, 234, 0.2);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.15);
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    border-color: rgba(147, 51, 234, 0.4);
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.25);
+}
+
+.tech-pill {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tech-pill:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Glow Effects */
+.glow-text {
+    text-shadow: 
+        0 0 20px rgba(147, 51, 234, 0.2),
+        0 0 40px rgba(147, 51, 234, 0.1),
+        0 0 60px rgba(147, 51, 234, 0.05);
+}
+
+.glow-border {
+    box-shadow:
+        0 0 20px rgba(147, 51, 234, 0.2),
+        0 0 40px rgba(147, 51, 234, 0.1),
+        inset 0 0 20px rgba(147, 51, 234, 0.1);
+}
+
+/* Animation for badge shine effect */
+@keyframes shine {
+    from {
+        background-position: -100% 0;
+    }
+    to {
+        background-position: 200% 0;
+    }
+}
+
+.shine-effect {
+    background: linear-gradient(
+        110deg,
+        transparent 33%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 66%
+    );
+    background-size: 200% 100%;
+    animation: shine 3s infinite;
+}
+
+/* Enhanced About Section */
+.about-card {
+    background: rgba(26, 0, 41, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(147, 51, 234, 0.1);
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    border-color: rgba(147, 51, 234, 0.3);
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.15);
+}
+
+.action-button {
+    background: rgba(147, 51, 234, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(147, 51, 234, 0.2);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 500;
+}
+
+.action-button:hover {
+    background: rgba(147, 51, 234, 0.2);
+    border-color: rgba(147, 51, 234, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(147, 51, 234, 0.2);
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Cursor Styles */
+body {
+    cursor: default;
+}
+
+a, button, input[type="submit"] {
+    cursor: pointer;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, div {
+    cursor: default;
+}
+
+input, textarea {
+    cursor: text;
+}
+
+/* Prevent text selection on non-interactive elements */
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Added styling for project images */
+#projects img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#projects img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
