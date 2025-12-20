@@ -8,12 +8,15 @@
     scroll-behavior: smooth;
 }
 
-html {
-    scroll-padding-top: 12rem; /* Further increased padding for more comfortable viewing space */
-}
 
-/* Disable text selection and cursor */
-* {
+
+section {
+    padding-top: 6rem;   /* space INSIDE top */
+    padding-bottom: 6rem;/* space INSIDE bottom */
+}
+/* Disable text selection and cursor */ 
+
+.no-select {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -242,6 +245,18 @@ input, textarea {
     cursor: text;
 }
 
+/* Prevent text cursor on headings and normal text */
+h1, h2, h3, h4, h5, h6,
+p, span, div, li {
+    caret-color: transparent;
+}
+
+/* Show caret in form fields */
+input,
+textarea {
+    caret-color: auto;
+}
+
 /* Prevent text selection on non-interactive elements */
 .no-select {
     -webkit-user-select: none;
@@ -260,8 +275,30 @@ input, textarea {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#projects img:hover {
+#skills h3 {
+  margin-top: 2rem;
+}
+
+/* Subtle floating animation for profile image */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+
+/* Hover scaling for project images is now handled via Tailwind
+   with `group-hover:scale-105` on the <img> and `overflow-hidden` on cards.
+   Keeping this rule disabled to avoid double transforms and layout shift. */
+/* #projects img:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
+} */
 
